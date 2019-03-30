@@ -1,15 +1,35 @@
 package commons;
 
+import core.entity.User;
+import menu.UserMenu;
+
 import java.util.List;
+import java.util.Scanner;
 
 public class UserCommons {
 
-    public void checkUser(List list, String username){
-        if (list.contains(username)) {
-            ConsoleMenu consoleMenu = new ConsoleMenu();
-            consoleMenu.displayUserMenu(username);
+    private UserMenu userMenu = new UserMenu();
+
+    public User readUser() {
+        System.out.println("Plese input user and password for login!");
+        Scanner sc = new Scanner(System.in);
+        String username = sc.nextLine();
+        String password = sc.nextLine();
+        User user = new User(username, password);
+
+        return user;
+    }
+
+    public void checkUser(List users, User user) {
+
+        if (UserList.getUserList().contains(user)) {
+            System.out.println("Welcome " + user.getUsername() + " !");
+            user.setLogged(true);
         } else {
-            System.out.println("Wrong username/password!");
+            System.out.println("Incorrect username/password!");
+            user.setLogged(false);
         }
     }
 }
+
+

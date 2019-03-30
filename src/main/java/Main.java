@@ -1,17 +1,10 @@
-import commons.ConsoleMenu;
-import commons.FileReadToList;
-import commons.UserCommons;
+import menu.ConsoleMenu;
 
 public class Main {
 
     public static void main(String[] args) {
 
         ConsoleMenu consoleMenu = new ConsoleMenu();
-        FileReadToList fileReadToList = new FileReadToList();
-        UserCommons userCommons = new UserCommons();
-
-        userCommons.checkUser(fileReadToList.FileToList(), consoleMenu.displayStartMenu());
-
-
+        consoleMenu.displayStartMenu();
     }
 }
