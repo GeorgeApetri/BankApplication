@@ -1,4 +1,6 @@
-import menu.ConsoleMenu;
+package com.pentastagiu.bank_application;
+
+import com.pentastagiu.bank_application.menu.ConsoleMenu;
 
 public class Main {
 

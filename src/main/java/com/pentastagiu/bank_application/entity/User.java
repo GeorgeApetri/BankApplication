@@ -1,4 +1,4 @@
-package core.entity;
+package com.pentastagiu.bank_application.entity;
 
 import java.util.Objects;
 

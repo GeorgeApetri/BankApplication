@@ -1,14 +1,11 @@
-package commons;
+package com.pentastagiu.bank_application.commons;
 
-import core.entity.User;
-import menu.UserMenu;
+import com.pentastagiu.bank_application.entity.User;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class UserCommons {
-
-    private UserMenu userMenu = new UserMenu();
 
     public User readUser() {
         System.out.println("Plese input user and password for login!");
