@@ -8,9 +8,10 @@ import java.util.Scanner;
 public class UserCommons {
 
     public User readUser() {
-        System.out.println("Plese input user and password for login!");
         Scanner sc = new Scanner(System.in);
+        System.out.println("Please input username!");
         String username = sc.nextLine();
+        System.out.println("Please input password!");
         String password = sc.nextLine();
         User user = new User(username, password);
 

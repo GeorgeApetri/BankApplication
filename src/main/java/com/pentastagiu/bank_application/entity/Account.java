@@ -66,4 +66,14 @@ public class Account {
     public int hashCode() {
         return Objects.hash(username, accountNumber, balance, accountType);
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "username='" + username + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", balance=" + balance +
+                ", accountType=" + accountType +
+                '}';
+    }
 }

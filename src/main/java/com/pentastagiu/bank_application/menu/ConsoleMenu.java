@@ -1,7 +1,9 @@
 package com.pentastagiu.bank_application.menu;
 
+import com.pentastagiu.bank_application.commons.UserCommons;
 import com.pentastagiu.bank_application.commons.UserList;
 import com.pentastagiu.bank_application.commons.UserLogin;
+import com.pentastagiu.bank_application.entity.User;
 
 import java.util.Scanner;
 
@@ -9,6 +11,7 @@ public class ConsoleMenu {
 
     private UserLogin userLogin = new UserLogin();
     private UserList userList = new UserList();
+    private UserCommons userCommons = new UserCommons();
 
 
     public void displayStartMenu() {
@@ -25,9 +28,11 @@ public class ConsoleMenu {
 
             switch (option) {
                 case 1:
-                    userLogin.validateUser();
+                    User user = userCommons.readUser();
+                    userLogin.validateUser(user);
                     break;
-                case 2:
+                case 0:
+                    System.out.println("Program closed!");
                     break;
             }
         } while (option != 0);

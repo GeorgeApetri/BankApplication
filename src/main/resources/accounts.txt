@@ -1,0 +1,5 @@
+{"username":"GeorgeA1","accountNumber":"RO19BPEX11939405900","balance":2500,"accountType":"EUR"}
+{"username":"GeorgeA1","accountNumber":"RO19BPEX39277843657","balance":3000,"accountType":"EUR"}
+{"username":"alexP92","accountNumber":"RO19BPEX83624454884","balance":3400,"accountType":"RON"}
+{"username":"Ioan1","accountNumber":"RO19BPEX55169305138","balance":1800,"accountType":"EUR"}
+{"username":"GeorgeA1","accountNumber":"RO19BPEX51227440257","balance":1500,"accountType":"RON"}

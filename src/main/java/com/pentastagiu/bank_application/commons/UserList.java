@@ -38,6 +38,7 @@ public class UserList {
         } catch (IOException e) {
             LOG.catching(e);
         }
+        LOG.info("UserList created!");
     }
 
     public static List<User> getUserList() {
