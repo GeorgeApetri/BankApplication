@@ -1,5 +1,6 @@
 package com.pentastagiu.bank_application.entity;
 
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -9,6 +10,8 @@ public class User {
     private String password;
 
     private boolean isLogged;
+
+    private List<Account> accountsList;
 
     public User(String username, String password) {
         this.username = username;
@@ -39,6 +42,14 @@ public class User {
         isLogged = logged;
     }
 
+    public List<Account> getAccountsList() {
+        return accountsList;
+    }
+
+    public void setAccountsList(List<Account> accountsList) {
+        this.accountsList = accountsList;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,5 +62,15 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(username, password);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", isLogged=" + isLogged +
+                ", accountsList=" + accountsList +
+                '}';
     }
 }

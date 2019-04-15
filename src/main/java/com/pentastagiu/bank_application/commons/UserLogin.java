@@ -10,7 +10,7 @@ public class UserLogin {
 
     public void validateUser(User user) {
         userCommons.checkUser(UserList.getUserList(), user);
-        if (user.isLogged()){
+        if (user.isLogged()) {
             userMenu.displayUserMenu(user);
         }
     }

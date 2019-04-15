@@ -8,5 +8,6 @@ public class Main {
 
         ConsoleMenu consoleMenu = new ConsoleMenu();
         consoleMenu.displayStartMenu();
+
     }
 }

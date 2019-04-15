@@ -14,12 +14,6 @@ public class AccountCommons {
 
     private static final Logger LOG = LogManager.getLogger(UserList.class);
 
-    private static HashMap<String, Account> hashMap = new HashMap<String, Account>();
-
-    public static HashMap<String, Account> getHashMap() {
-        return hashMap;
-    }
-
     public Account accountCreation(User user) {
 
         System.out.println("$$  ACCOUNT CREATION  $$");
@@ -52,7 +46,7 @@ public class AccountCommons {
     }
 
     public AccountType accountTypeCreation() {
-        System.out.print("Set account type (EUR/RON): ");
+        System.out.print("Select currency type (EUR/RON): ");
         Scanner scanner = new Scanner(System.in);
         String option = scanner.nextLine();
         return AccountType.valueOf(option);
@@ -72,25 +66,32 @@ public class AccountCommons {
         }
     }
 
-    public void fileToAccountsHashMap() {
+    public void fileToAccountsList(User user) {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\main\\resources\\accounts.txt"))) {
-            while (bufferedReader.readLine() != null) {
-                String line = bufferedReader.readLine();
+            List<Account> accountList1 = new ArrayList<>();
+            String strCurrentLine;
+            while ((strCurrentLine = bufferedReader.readLine()) != null) {
                 Gson gson = new Gson();
-                Account account = gson.fromJson(line, Account.class);
-                hashMap.put(account.getUsername(), account);
+                Account account = gson.fromJson(strCurrentLine, Account.class);
+                if (account.getUsername().equals(user.getUsername())) {
+                    accountList1.add(account);
+                }
             }
+            user.setAccountsList(accountList1);
+            LOG.info("Account list created!");
+            System.out.println();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void getUserAccounts(HashMap hashMap, User user) {
+    public void getUserAccounts(User user) {
         System.out.println("$$ ACCOUNTS FOR USER " + user.getUsername() + " ! $$");
-        if (hashMap.containsKey(user.getUsername())) ;
-        {
-            System.out.println(hashMap.get(user.getUsername()).toString());
+        System.out.println();
+        for (Account account : user.getAccountsList()) {
+            System.out.println(account.toString());
         }
+        System.out.println();
     }
 }
 

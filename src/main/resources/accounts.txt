@@ -3,3 +3,6 @@
 {"username":"alexP92","accountNumber":"RO19BPEX83624454884","balance":3400,"accountType":"RON"}
 {"username":"Ioan1","accountNumber":"RO19BPEX55169305138","balance":1800,"accountType":"EUR"}
 {"username":"GeorgeA1","accountNumber":"RO19BPEX51227440257","balance":1500,"accountType":"RON"}
+{"username":"Ioan1","accountNumber":"RO19BPEX89479532838","balance":800,"accountType":"EUR"}
+{"username":"alexP92","accountNumber":"RO19BPEX70600578664","balance":1800,"accountType":"RON"}
+{"username":"GeorgeA1","accountNumber":"RO19BPEX17831908973","balance":3000,"accountType":"EUR"}

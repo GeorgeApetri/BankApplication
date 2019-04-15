@@ -26,8 +26,8 @@ public class UserList {
 
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(" ", 2);
-                if (parts.length >= 2){
-                    String username  = parts[0];
+                if (parts.length >= 2) {
+                    String username = parts[0];
                     String password = parts[1];
                     User user = new User(username, password);
                     userList.add(user);
@@ -39,6 +39,28 @@ public class UserList {
             LOG.catching(e);
         }
         LOG.info("UserList created!");
+    }
+
+    public boolean isCorrectFileName(String filename) {
+
+        boolean corectFileName = false;
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource(filename).getFile());
+            if (filename.equals(file.getCanonicalPath())) {
+                corectFileName = true;
+            }
+        } catch (NullPointerException | IOException e) {
+            if (corectFileName = false) {
+                try {
+                    throw new IncorectFileNameException("Incorrect filename: " + filename);
+                } catch (IncorectFileNameException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            LOG.catching(e);
+        }
+        return corectFileName;
     }
 
     public static List<User> getUserList() {

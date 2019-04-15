@@ -1,5 +1,6 @@
 package com.pentastagiu.bank_application.menu;
 
+import com.pentastagiu.bank_application.commons.Utils;
 import com.pentastagiu.bank_application.entity.User;
 
 import java.util.Scanner;
@@ -16,9 +17,11 @@ public class UserMenu {
         do {
             System.out.println("1. Account");
             System.out.println("0. Logout");
-            option = scanner.nextInt();
-            switch (option){
-                case 1: accountMenu.displayAccountMenu(user);
+            Utils utils = new Utils();
+            option = utils.inputOption();
+            switch (option) {
+                case 1:
+                    accountMenu.displayAccountMenu(user);
                     break;
                 case 0:
                     break;
